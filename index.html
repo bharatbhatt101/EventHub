@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>EventHub — Discover. Experience. Remember.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header"><a class="logo" href="#home"><span>Event</span>Hub</a>
+        <nav class="nav" id="nav"><a href="#home">Home</a><a href="#events">Events</a><a
+                href="#categories">Categories</a><a href="#bookings">My Bookings</a></nav>
+        <div class="header-actions"><button class="icon-btn" id="themeBtn">☾</button><button
+                class="icon-btn mobile-menu" id="menuBtn">☰</button></div>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">DISCOVER WHAT'S HAPPENING</p>
+                <h1>Make plans.<br><em>Make memories.</em></h1>
+                <p class="hero-text">Find concerts, workshops, sports, festivals and experiences happening around you.
+                </p><a class="primary-btn" href="#events">Explore Events <span>→</span></a>
+            </div>
+            <div class="hero-orb orb-one"></div>
+            <div class="hero-orb orb-two"></div>
+            <div class="hero-card"><span class="mini-label">THIS WEEKEND</span><strong>Live Music
+                    Night</strong><small>Chandigarh • 7:30 PM</small><button onclick="openDetails(1)">View event
+                    →</button></div>
+        </section>
+        <section class="section" id="events">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">FIND YOUR NEXT EXPERIENCE</p>
+                    <h2>Popular events</h2>
+                </div>
+                <div class="controls"><input id="searchInput" type="search" placeholder="Search events..."><select
+                        id="sortSelect">
+                        <option value="featured">Featured</option>
+                        <option value="priceLow">Price: Low to High</option>
+                        <option value="priceHigh">Price: High to Low</option>
+                        <option value="date">Date</option>
+                    </select></div>
+            </div>
+            <div class="chips" id="categoryFilters"><button class="chip active" data-category="All">All</button><button
+                    class="chip" data-category="Music">Music</button><button class="chip"
+                    data-category="Sports">Sports</button><button class="chip"
+                    data-category="Workshop">Workshop</button><button class="chip"
+                    data-category="Festival">Festival</button></div>
+            <div class="event-grid" id="eventGrid"></div>
+            <div class="empty" id="emptyState" hidden>No events found. Try another search or category.</div>
+        </section>
+        <section class="section categories" id="categories">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">EXPLORE</p>
+                    <h2>Choose your vibe</h2>
+                </div>
+            </div>
+            <div class="category-grid"><button class="category-card"
+                    data-category-jump="Music"><span>♫</span><strong>Music</strong><small>Concerts & live
+                        shows</small></button><button class="category-card"
+                    data-category-jump="Sports"><span>⚽</span><strong>Sports</strong><small>Games &
+                        tournaments</small></button><button class="category-card"
+                    data-category-jump="Workshop"><span>✦</span><strong>Workshops</strong><small>Learn something
+                        new</small></button><button class="category-card"
+                    data-category-jump="Festival"><span>✺</span><strong>Festivals</strong><small>Celebrate
+                        together</small></button></div>
+        </section>
+        <section class="section bookings-section" id="bookings">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR PLANS</p>
+                    <h2>My bookings</h2>
+                </div><span class="booking-count" id="bookingCount">0 bookings</span>
+            </div>
+            <div id="bookingList" class="booking-list"></div>
+            <div class="empty" id="bookingEmpty">You haven't booked any events yet. Explore an event and reserve your
+                spot.</div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div><a class="logo" href="#home"><span>Event</span>Hub</a>
+            <p>Discover experiences worth remembering.</p>
+        </div>
+        <p>© 2026 EventHub. Built with HTML, CSS & JavaScript.</p>
+    </footer>
+    <div class="modal-backdrop" id="modalBackdrop">
+        <div class="modal"><button class="modal-close" id="modalClose">×</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
